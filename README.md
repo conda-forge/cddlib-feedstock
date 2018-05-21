@@ -1,27 +1,33 @@
 About cddlib
 ============
 
-Home: https://www.inf.ethz.ch/personal/fukudak/cdd_home/
+Home: https://github.com/cddlib/cddlib
 
 Package license: GPLv2
 
 Feedstock license: BSD 3-Clause
 
-Summary: The C-library  cddlib is a C implementation of the Double Description Method of Motzkin et al.
+Summary: An efficient implementation of the Double Description Method
 
+The C-library cddlib is a C implementation of the Double Description Method
+of Motzkin et al. for generating all vertices (i.e. extreme points) and
+extreme rays of a general convex polyhedron in real space given by a system
+of linear inequalities.
 
 
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/cddlib-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/cddlib-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/cddlib-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/cddlib-feedstock)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/cddlib-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/cddlib-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/cddlib-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/cddlib-feedstock)
+![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/cddlib/badges/version.svg)](https://anaconda.org/conda-forge/cddlib)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/cddlib/badges/downloads.svg)](https://anaconda.org/conda-forge/cddlib)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-cddlib-green.svg)](https://anaconda.org/conda-forge/cddlib) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cddlib.svg)](https://anaconda.org/conda-forge/cddlib) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cddlib.svg)](https://anaconda.org/conda-forge/cddlib) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cddlib.svg)](https://anaconda.org/conda-forge/cddlib) |
 
 Installing cddlib
 =================
@@ -66,6 +72,7 @@ To manage the continuous integration and simplify feedstock maintenance
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
+For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
