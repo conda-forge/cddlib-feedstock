@@ -4,7 +4,7 @@
 
 package:
   name: {{ name }}
-  version: {{ version }}
+  version: {{ version | replace(".", "") }}
 
 source:
   url: https://github.com/cddlib/cddlib/archive/{{ version }}.tar.gz
