@@ -25,9 +25,9 @@ requirements:
     - {{ compiler('c') }}
     - libtool
   host:
-    - gmp 6.*
+    - gmp
   run:
-    - gmp 6.*
+    - gmp
 
 test:
   commands:
