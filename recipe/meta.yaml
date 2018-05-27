@@ -20,7 +20,7 @@ build:
   number: 0
   skip: true  # [win]
   run_exports:
-    - {{ pin_subpackage('cddlib', max_pin='x.x') }}
+    - {{ pin_subpackage('cddlib', max_pin='x') }}
 
 requirements:
   build:
