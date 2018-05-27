@@ -17,10 +17,10 @@ source:
     - patches/0002-compute-reduced-H-and-V-representation-of-polytope.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   run_exports:
-    - {{ pin_subpackage('cddlib', max_pin='x') }}
+    - cddlib >=1!{{ version }}
 
 requirements:
   build:
