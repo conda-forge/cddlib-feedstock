@@ -1,15 +1,14 @@
-{% set version = "094h" %}
 {% set name = "cddlib" %}
-{% set md5 = "1467d270860bbcb26d3ebae424690e7c" %}
+{% set version = "0.94i" %}
+{% set sha256 = "c60dac8697357740c593f8f255d49ac8a5069623561d68720fd9089367c90f4a" %}
 
 package:
   name: {{ name }}
-  version: {{ version }}
+  version: 1!{{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}2.tar.gz
-  url: http://pkgs.fedoraproject.org/repo/pkgs/cddlib/{{ name }}-{{ version }}.tar.gz/{{ md5 }}/{{ name }}-{{ version }}.tar.gz
-  md5: {{ md5 }}
+  url: https://github.com/cddlib/cddlib/archive/{{ version }}.tar.gz
+  sha256: {{ sha256 }}
   patches:
     # patches from https://github.com/sagemath/sage
     # To make the output consistent across platforms, use a portable rand
@@ -20,14 +19,17 @@ source:
 build:
   number: 0
   skip: true  # [win]
+  run_exports:
+    - {{ pin_subpackage('cddlib', max_pin='x') }}
 
 requirements:
   build:
-    - toolchain
+    - {{ compiler('c') }}
     - libtool
-    - gmp >=5.0.1,<7
+  host:
+    - gmp
   run:
-    - gmp >=5.0.1,<7
+    - gmp
 
 test:
   commands:
@@ -40,12 +42,18 @@ test:
     - test -f ${PREFIX}/lib/libcddgmp.so     # [linux]
 
 about:
-  home: https://www.inf.ethz.ch/personal/fukudak/cdd_home/
+  home: https://github.com/cddlib/cddlib
   license: GPLv2
   license_file: COPYING
-  summary: The C-library  cddlib is a C implementation of the Double Description Method of Motzkin et al.
+  summary: An efficient implementation of the Double Description Method
+  description: |
+    The C-library cddlib is a C implementation of the Double Description Method
+    of Motzkin et al. for generating all vertices (i.e. extreme points) and
+    extreme rays of a general convex polyhedron in real space given by a system
+    of linear inequalities.
   doc_url: ftp://ftp.math.ethz.ch/users/fukudak/cdd/cddlibman/cddlibman.html
 
 extra:
   recipe-maintainers:
     - isuruf
+    - saraedum
