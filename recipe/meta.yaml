@@ -7,7 +7,7 @@ package:
   version: 1!{{ version }}
 
 source:
-  url: https://github.com/cddlib/cddlib/archive/{{ version }}.tar.gz
+  url: https://github.com/cddlib/cddlib/releases/download/{{ version }}/cddlib-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
