@@ -4,7 +4,7 @@
 
 package:
   name: {{ name }}
-  version: 2!{{ version }}
+  version: 1!{{ version }}
 
 source:
   url: https://github.com/cddlib/cddlib/releases/download/{{ version }}/cddlib-{{ version }}.tar.gz
@@ -14,7 +14,7 @@ build:
   number: 1
   skip: true  # [win]
   run_exports:
-    - cddlib >=2!{{ version }}
+    - cddlib >=1!{{ version }}
 
 requirements:
   build:
