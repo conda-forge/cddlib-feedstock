@@ -1,20 +1,14 @@
 {% set name = "cddlib" %}
-{% set version = "0.94i" %}
-{% set sha256 = "c60dac8697357740c593f8f255d49ac8a5069623561d68720fd9089367c90f4a" %}
+{% set version = "0.94j" %}
+{% set sha256 = "27d7fcac2710755a01ef5381010140fc57c95f959c3c5705c58539d8c4d17bfb" %}
 
 package:
   name: {{ name }}
   version: 1!{{ version }}
 
 source:
-  url: https://github.com/cddlib/cddlib/archive/{{ version }}.tar.gz
+  url: https://github.com/cddlib/cddlib/releases/download/{{ version }}/cddlib-{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    # patches from https://github.com/sagemath/sage
-    # To make the output consistent across platforms, use a portable rand
-    - patches/0001-Add-portable-rand.patch
-    # compute reduced H and V representation of polytope for sage.geometry.polyhedron
-    - patches/0002-compute-reduced-H-and-V-representation-of-polytope.patch
 
 build:
   number: 1
