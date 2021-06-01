@@ -29,9 +29,7 @@ requirements:
 
 test:
   commands:
-    - test -f ${PREFIX}/include/cdd.h
-    - test -f ${PREFIX}/lib/libcdd.a
-    - test -f ${PREFIX}/lib/libcddgmp.a
+    - test -f ${PREFIX}/include/cddlib/cdd.h
     - test -f ${PREFIX}/lib/libcdd.dylib     # [osx]
     - test -f ${PREFIX}/lib/libcdd.so        # [linux]
     - test -f ${PREFIX}/lib/libcddgmp.dylib  # [osx]
