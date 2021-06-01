@@ -1,6 +1,6 @@
 {% set name = "cddlib" %}
-{% set version = "0.94j" %}
-{% set sha256 = "27d7fcac2710755a01ef5381010140fc57c95f959c3c5705c58539d8c4d17bfb" %}
+{% set version = "0.94m" %}
+{% set sha256 = "70dffdb3369b8704dc75428a1b3c42ab9047b81ce039f12f427e2eb2b1b0dee2" %}
 
 package:
   name: {{ name }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1001
+  number: 0
   skip: true  # [win]
   run_exports:
     - cddlib >=1!{{ version }}
@@ -29,9 +29,7 @@ requirements:
 
 test:
   commands:
-    - test -f ${PREFIX}/include/cdd.h
-    - test -f ${PREFIX}/lib/libcdd.a
-    - test -f ${PREFIX}/lib/libcddgmp.a
+    - test -f ${PREFIX}/include/cddlib/cdd.h
     - test -f ${PREFIX}/lib/libcdd.dylib     # [osx]
     - test -f ${PREFIX}/lib/libcdd.so        # [linux]
     - test -f ${PREFIX}/lib/libcddgmp.dylib  # [osx]

@@ -8,7 +8,7 @@ export LD_LIBRARY_PATH="$PREFIX/lib:$LD_LIBRARY_PATH"
 export CFLAGS="-g -O2 $CFLAGS"
 
 chmod +x configure
-./configure --prefix="$PREFIX"
+./configure --prefix="$PREFIX" --disable-static
 
 make
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
