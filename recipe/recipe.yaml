@@ -23,8 +23,7 @@ requirements:
         - libtool
         - make
       else:
-        - cmake
-        - ninja
+        - autotools_clang_conda
   host:
     - gmp
   run:
@@ -37,8 +36,17 @@ tests:
       include:
         - cddlib/cdd.h
       lib:
-        - cdd
-        - cddgmp
+        - if: unix
+          then:
+            - cdd
+            - cddgmp
+      files:
+        - if: win
+          then:
+            - Library/bin/libcdd-0.dll
+            - Library/bin/libcddgmp-0.dll
+            - Library/lib/cdd.lib
+            - Library/lib/cddgmp.lib
 
 about:
   homepage: https://github.com/cddlib/cddlib
