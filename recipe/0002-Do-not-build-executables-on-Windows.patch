@@ -1,0 +1,24 @@
+From 95071559b240e8bda762c4e0dd0567de6ac7fcad Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Julian=20R=C3=BCth?= <julian.rueth@fsfe.org>
+Date: Mon, 16 Nov 2026 02:09:47 -0600
+Subject: [PATCH 2/2] Do not build executables on Windows
+
+they'd need constants from the library that are not declared as dllimport.
+---
+ Makefile.am | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile.am b/Makefile.am
+index 51e5fd5..214f10e 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -1,5 +1,5 @@
+ # Directories where we can build something.
+-SUBDIRS          = doc lib-src src
++SUBDIRS          = doc lib-src
+ 
+ # Install the examples into /usr/share/doc/cddlib/examples*
+ nobase_doc_DATA = $(srcdir)/examples/* $(srcdir)/examples-ine/* $(srcdir)/examples-ine3d/* $(srcdir)/examples-ext/*
+-- 
+2.56.0
+
