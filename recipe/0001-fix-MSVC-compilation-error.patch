@@ -1,7 +1,7 @@
-From 59eb60ffc69be4d029c47abaa2860869fa7b76eb Mon Sep 17 00:00:00 2001
+From 17c154f876e708853129df47c0132516b0785827 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?=E8=8C=83=E8=A3=95=E8=BE=BE?= <mistergalahad@gmail.com>
 Date: Tue, 13 Jan 2026 11:33:01 +0800
-Subject: [PATCH] fix MSVC compilation error
+Subject: [PATCH 1/2] fix MSVC compilation error
 
 ---
  lib-src/cddcore.c    | 18 ++++++++++++------
@@ -260,3 +260,6 @@ index 92c4e75..adafc15 100644
  
  static void srand_splitmix64(uint64_t seed) {
  	x = seed;
+-- 
+2.56.0
+

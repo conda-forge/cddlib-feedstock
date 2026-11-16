@@ -9,7 +9,10 @@ source:
   url: https://github.com/cddlib/cddlib/releases/download/${{ version }}/cddlib-${{ version }}.tar.gz
   sha256: b87ee07ba2c1d0ab92a3e4eccacdf568f981a095a392e3b9efd7e7e4a9e125b1
   patches:
-    - msvc.patch
+    # https://github.com/cddlib/cddlib/pull/86
+    - 0001-fix-MSVC-compilation-error.patch
+    - if: win
+      then: 0002-Do-not-build-executables-on-Windows.patch
 
 build:
   number: 1
@@ -43,8 +46,8 @@ tests:
       files:
         - if: win
           then:
-            - Library/bin/libcdd-0.dll
-            - Library/bin/libcddgmp-0.dll
+            - Library/bin/cdd-0.dll
+            - Library/bin/cddgmp-0.dll
             - Library/lib/cdd.lib
             - Library/lib/cddgmp.lib
 
