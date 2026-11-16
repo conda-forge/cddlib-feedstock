@@ -23,6 +23,12 @@ fi
 
 make
 
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
+  make check
+fi
+
+make install
+
 if [[ "${target_platform}" == win-* ]]; then
   # Install .lib without the .dll.lib suffix
   for lib in cdd cddgmp; do
@@ -30,8 +36,3 @@ if [[ "${target_platform}" == win-* ]]; then
   done
 fi
 
-if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
-  make check
-fi
-
-make install
