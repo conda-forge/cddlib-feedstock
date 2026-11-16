@@ -9,6 +9,7 @@ export LDFLAGS="-L$PREFIX/lib $LDFLAGS"
 export LD_LIBRARY_PATH="$PREFIX/lib:$LD_LIBRARY_PATH"
 export CFLAGS="-g -O2 $CFLAGS"
 
+# Pick up patches to configure.ac
 autoreconf -ivf
 
 chmod +x configure
